@@ -18,7 +18,7 @@
   background-image: url(../images/cover-image-light.png);
 }
 
-.page.theme_light .corners {
+.page.theme_light .decorated-zone {
   --header-corner-color: var(--text-color);
 }
 
@@ -40,9 +40,10 @@
     --header-color: #ffc2e6;
     --accent-color: #ff8dcb;
     --text-color: #353430;
+    --hover-color: #32312d66;
   }
 
-  .corners {
+  .decorated-zone {
     --header-corner-color: var(--text-color);
   }
 

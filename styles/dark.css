@@ -19,7 +19,7 @@
   background-image: url(../images/cover-image-dark.png);
 }
 
-.page.theme_dark .corners {
+.page.theme_dark .decorated-zone {
   --header-corner-color: var(--accent-color);
 }
 
@@ -41,15 +41,16 @@
     --header-color: #db00ff;
     --accent-color: #ff0070;
     --text-color: #f1b2ce;
-
     --accent-text: #000028;
+
+    --hover-color: #ff007066;
   }
 
   .page {
     background-image: url(../images/cover-image-dark.png);
   }
 
-  .corners {
+  .decorated-zone {
     --header-corner-color: var(--accent-color);
   }
 
