@@ -1,8 +1,10 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  padding: 10px;
+  min-inline-size: 375px;
+  max-inline-size: 1440px;
+
+  padding: var(--padding);
 
   background-image: url(../images/cover-image-light.png);
   background-position: center;
@@ -18,30 +20,70 @@
 
 .decorated-zone {
   --header-corner-color: var(--text-color);
+
+  position: relative;
+
+  display: grid;
+
+  inline-size: 100%;
+  min-block-size: calc(100vh - (var(--padding) * 2));
 }
 
 .decorated-zone::before,
 .decorated-zone::after {
   content: '';
 
-  width: 25px;
-  height: 25px;
+  position: absolute;
+
+  inline-size: 25px;
+  block-size: 25px;
 }
 
 .decorated-zone::before {
-  align-self: flex-start;
-  justify-self: flex-end;
+  inset-block-start: 0;
+  inset-inline-end: 0;
 
   border-block-start: 1px solid var(--header-corner-color);
   border-inline-end: 1px solid var(--header-corner-color);
 }
 
 .decorated-zone::after {
-  align-self: flex-end;
-  justify-self: flex-start;
+  inset-block-end: 0;
+  inset-inline-start: 0;
 
   border-block-end: 1px solid var(--header-corner-color);
   border-inline-start: 1px solid var(--header-corner-color);
+}
+
+.decorated-text {
+  position: absolute;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  inset-inline-end: 9px;
+  inset-block-start: 0;
+
+  color: var(--accent-color);
+  font-size: inherit;
+  line-height: 139%;
+}
+
+.decorated-text::before {
+  content: 'REC';
+}
+
+.decorated-text::after {
+  content: '';
+
+  inline-size: 9px;
+  block-size: 9px;
+
+  background-color: currentColor;
+  border-radius: 50%;
+
+  box-shadow: 0px 0px 4px 2px currentColor;
 }
 
 .title {
@@ -51,7 +93,6 @@
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--header-color);
   line-height: 82.5%;
-  white-space: break-spaces;
 }
 
 .title-decor {
@@ -62,19 +103,18 @@
   color: var(--accent-background-text-color);
 }
 
+.grid-container {
+  display: grid;
+  gap: 20px;
+}
+
 /* header */
 
 .header {
-  display: grid;
-  grid-template-rows: repeat(5, min-content);
+  grid-template-rows: 1fr min-content 1fr;
   grid-template-columns: 1fr;
 
-  width: 100%;
-  height: 100vh;
-
-  align-content: space-between;
-
-  margin-block-end: 40px;
+  margin-block-end: var(--margin);
 }
 
 .header__theme-menu {
@@ -129,17 +169,19 @@
 }
 
 .header__title {
-  align-self: center;
+  align-self: flex-start;
   justify-self: flex-start;
 }
 
 .header__description {
-  width: 355px;
-
-  align-self: flex-start;
+  align-self: center;
   justify-self: flex-end;
 
   font-weight: 700;
+}
+
+.header__description-text {
+  inline-size: min-content;
 }
 
 /* content */
@@ -155,16 +197,12 @@
   color: var(--heading-color);
 }
 
-.content__list-item:not(:last-child) {
-  margin-block: 20px;
-}
-
-.gallery .content__list-item:not(:last-child) {
-  margin-block: 10px;
+.grid-container:has(.gallery),
+.gallery {
+  gap: var(--padding);
 }
 
 .content__list-heading {
-  margin-block-start: 20px;
   font-size: inherit;
 }
 
@@ -208,10 +246,10 @@
 /* footer */
 
 .footer {
-  display: grid;
-  grid-template-rows: min-content max-content min-content;
+  align-content: center;
+  justify-content: center;
 
-  margin-block-start: 40px;
+  margin-block-start: var(--margin);
 }
 
 .footer__title {
@@ -221,11 +259,20 @@
 }
 
 @media(width >= 768px) {
-  .page {
-    padding: 20px;
+  :root {
+    --margin: 60px;
+    --padding: 20px;
   }
 
   .header__title {
     margin-inline-start: -20px;
+  }
+
+  .column {
+    grid-template-columns: fit-content(236px) 1fr;
+  }
+
+  .wide .content__heading {
+    inline-size: 236px;
   }
 }

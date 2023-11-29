@@ -17,6 +17,7 @@
   </head>
   <body class="page">
     <header class="header decorated-zone">
+      <div class="decorated-text"></div>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
@@ -46,18 +47,17 @@
 
       <h1 class="header__title title">no focus</h1>
 
-      <p class="header__description title-decor">
-        Что делать, когда не можешь делать ничего
-        <br>
-        Или почему нам так сложно сконцентрироваться, особенно когда очень надо
-      </p>
+      <div class="header__description title-decor">
+        <p class="header__description-text">Что делать, когда не можешь делать ничего</p>
+        <p class="header__description-text">Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
+      </div>
     </header>
 
     <main>
-      <section class="content column">
+      <section class="content column grid-container">
         <h2 class="content__heading">Почему сосредоточиться так сложно</h2>
 
-        <ul class="content__list">
+        <ul class="content__list grid-container">
           <li class="content__list-item">
             <h3 class="content__list-item__heading title-decor">Многозадачность</h3>
 
@@ -75,10 +75,10 @@
           </li>
         </ul>
       </section>
-      <section class="content wide">
+      <section class="content wide grid-container">
         <h2 class="content__heading">Что снижает концентрацию внимания?</h2>
 
-        <ul class="content__list">
+        <ul class="content__list grid-container">
           <li class="content__list-item">
             <h3 class="content__list-item__heading title-decor">Многозадачность</h3>
 
@@ -105,13 +105,13 @@
         </ul>
       </section>
 
-      <section class="content column">
+      <section class="content column grid-container">
         <h2 class="content__heading">Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)</h2>
 
-        <div class="content__list-container">
+        <div class="content__list-container grid-container">
           <h3 class="content__list-heading title-decor">5 простых (на самом деле не очень) советов</h3>
 
-          <ul class="content__list">
+          <ul class="content__list grid-container">
             <li class="content__list-item">
               <h4 class="content__list-item__heading title-decor">Представьте небо и облака</h4>
 
@@ -155,10 +155,10 @@
         </div>
       </section>
 
-      <section class="content wide" aria-label="Секция с галереей">
+      <section class="content grid-container" aria-label="Секция с галереей">
         <h3 class="content__list-heading title-decor">А можно в картинках?</h3>
 
-        <ul class="content__list gallery">
+        <ul class="content__list gallery grid-container">
           <li class="content__list-item">
             <img class="content__list-item__image" src="./images/sunset.png" loading="lazy" alt="Закат">
           </li>
