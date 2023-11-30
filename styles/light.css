@@ -16,6 +16,7 @@
   --hover-color: #32312d66;
 
   background-image: url(../images/cover-image-light.png);
+  background-color: #fff;
 }
 
 .page.theme_light .decorated-zone {
@@ -78,6 +79,7 @@
 
   .page {
     background-image: url(../images/cover-image-light.png);
+    background-color: #fff;
   }
 
   .header__theme-menu-button {

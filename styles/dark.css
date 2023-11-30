@@ -17,6 +17,7 @@
   --hover-color: #ff007066;
 
   background-image: url(../images/cover-image-dark.png);
+  background-color: var(--accent-text);
 }
 
 .page.theme_dark .decorated-zone {
@@ -57,6 +58,7 @@
 
   .page {
     background-image: url(../images/cover-image-dark.png);
+    background-color: var(--accent-text);
   }
 
   .decorated-zone {
