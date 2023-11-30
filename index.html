@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <link rel="icon" href="./images/favicon.ico" />
-    <link rel="icon" href="./images/favicon.svg" type="image/svg + xmls" />
+    <link rel="icon" href="./images/favicon.ico" sizes="any" />
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/mobile-icon.png" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
@@ -17,7 +18,7 @@
   </head>
   <body class="page">
     <header class="header decorated-zone">
-      <div class="decorated-text"></div>
+      <div aria-hidden="true" class="decorated-text"></div>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
@@ -48,8 +49,12 @@
       <h1 class="header__title title">no focus</h1>
 
       <div class="header__description title-decor">
-        <p class="header__description-text">Что делать, когда не можешь делать ничего</p>
-        <p class="header__description-text">Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
+        <p class="header__description-text">
+          Что делать, когда не можешь делать ничего
+        </p>
+        <p class="header__description-text">
+          Или почему нам так сложно сконцентрироваться, особенно когда очень надо
+        </p>
       </div>
     </header>
 
@@ -159,15 +164,15 @@
         <h3 class="content__list-heading title-decor">А можно в картинках?</h3>
 
         <ul class="content__list gallery grid-container">
-          <li class="content__list-item">
+          <li class="content__list-item wide-image">
             <img class="content__list-item__image" src="./images/sunset.png" loading="lazy" alt="Закат">
           </li>
 
-          <li class="content__list-item">
+          <li class="content__list-item long-image">
             <img class="content__list-item__image" src="./images/ice-cream.png" loading="lazy" alt="Мороженое">
           </li>
 
-          <li class="content__list-item">
+          <li class="content__list-item long-image">
             <img class="content__list-item__image" src="./images/tape.png" loading="lazy" alt="Музыкальная кассета">
           </li>
 
@@ -175,7 +180,7 @@
             <img class="content__list-item__image" src="./images/books.png" loading="lazy" alt="Стопка книг">
           </li>
 
-          <li class="content__list-item">
+          <li class="content__list-item wide-image">
             <img class="content__list-item__image" src="./images/street.png" loading="lazy" alt="Улица">
           </li>
         </ul>

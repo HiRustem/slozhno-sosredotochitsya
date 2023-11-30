@@ -10,6 +10,8 @@
 
   --hover-color: #32312d66;
 
-  --margin: 40px;
+  --header-and-footer-margin: 40px;
+  --content-margin: 50px;
+
   --padding: 10px;
 }

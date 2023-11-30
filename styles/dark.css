@@ -23,6 +23,15 @@
   --header-corner-color: var(--accent-color);
 }
 
+.page.theme_dark .decorated-text {
+  display: flex;
+}
+
+.page.theme_dark .title {
+  --text-color: var(--header-color);
+  --shadow-color: var(--accent-color);
+}
+
 .page.theme_dark .title-decor {
   --accent-background-text-color: var(--accent-text);
 }
@@ -52,6 +61,15 @@
 
   .decorated-zone {
     --header-corner-color: var(--accent-color);
+  }
+
+  .decorated-text {
+    display: flex;
+  }
+
+  .title {
+    --text-color: var(--header-color);
+    --shadow-color: var(--accent-color);
   }
 
   .title-decor {
