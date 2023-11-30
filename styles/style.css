@@ -14,6 +14,14 @@
   color: var(--text-color);
 }
 
+/* header */
+
+.header {
+  grid-template-rows: 1fr min-content 1fr;
+
+  margin-block-end: var(--header-and-footer-margin);
+}
+
 .decorated-zone {
   --header-corner-color: var(--text-color);
 
@@ -84,38 +92,6 @@
   box-shadow: 0px 0px 4px 2px currentColor;
 }
 
-.title {
-  --text-color: var(--header-color);
-  --shadow-color: var(--accent-color);
-
-  font-family: 'IBM Plex mono', sans-serif;
-  font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  color: var(--text-color);
-  line-height: 82.5%;
-}
-
-.title-decor {
-  --accent-background-text-color: var(--text-color);
-
-  background-color: var(--accent-color);
-
-  color: var(--accent-background-text-color);
-}
-
-.grid-container {
-  display: grid;
-  gap: 20px;
-}
-
-/* header */
-
-.header {
-  grid-template-rows: 1fr min-content 1fr;
-
-  margin-block-end: var(--header-and-footer-margin);
-}
-
 .header__theme-menu {
   align-self: center;
   justify-self: flex-end;
@@ -147,7 +123,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border-color: var(--hover-color);
+  outline: 1px solid var(--hover-color);
 }
 
 .header__theme-menu-button:focus {
@@ -159,11 +135,11 @@
 }
 
 .header__theme-menu-button:active {
-  border: 1px solid var(--button-border-color);
+  outline: 1px solid var(--button-border-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--button-border-color);
+  border-color: var(--button-border-color);
 
   pointer-events: none;
 }
@@ -173,6 +149,25 @@
   justify-self: flex-start;
 
   text-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.title {
+  --text-color: var(--header-color);
+  --shadow-color: var(--accent-color);
+
+  font-family: 'IBM Plex mono', sans-serif;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--text-color);
+  line-height: 82.5%;
+}
+
+.title-decor {
+  --accent-background-text-color: var(--text-color);
+
+  background-color: var(--accent-color);
+
+  color: var(--accent-background-text-color);
 }
 
 .header__description {
@@ -192,6 +187,11 @@
 
 .content:not(:last-child) {
   margin-block-end: var(--content-margin);
+}
+
+.grid-container {
+  display: grid;
+  gap: 20px;
 }
 
 .content__heading {
@@ -258,8 +258,6 @@
 }
 
 .footer__title {
-  margin-block: 251px;
-
   text-align: center;
   text-shadow: 2px 2px 0px var(--shadow-color);
 }
