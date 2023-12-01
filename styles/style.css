@@ -1,14 +1,14 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  background-image: url(../images/cover-image-light.png);
-  background-color: #fff;
+  background-image: var(--background);
+  background-color: var(--page-background-color);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace;
   font-size: 18px;
   line-height: 130%;
   color: var(--text-color);
@@ -23,8 +23,6 @@
 }
 
 .decorated-zone {
-  --header-corner-color: var(--text-color);
-
   position: relative;
 
   display: grid;
@@ -49,16 +47,16 @@
   inset-block-start: var(--padding);
   inset-inline-end: var(--padding);
 
-  border-block-start: 1px solid var(--header-corner-color);
-  border-inline-end: 1px solid var(--header-corner-color);
+  border-block-start: 1px solid var(--corner-color);
+  border-inline-end: 1px solid var(--corner-color);
 }
 
 .decorated-zone::after {
   inset-block-end: var(--padding);
   inset-inline-start: var(--padding);
 
-  border-block-end: 1px solid var(--header-corner-color);
-  border-inline-start: 1px solid var(--header-corner-color);
+  border-block-end: 1px solid var(--corner-color);
+  border-inline-start: 1px solid var(--corner-color);
 }
 
 .decorated-text {
@@ -105,9 +103,6 @@
 }
 
 .header__theme-menu-button {
-  --button-text-color: var(--text-color);
-  --button-border-color: var(--text-color);
-
   padding: 3px 13px;
 
   border: 1px solid transparent;
@@ -131,7 +126,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  text-decoration: underline;
+  border-bottom-color: var(--button-border-color);
 }
 
 .header__theme-menu-button:active {
@@ -148,30 +143,24 @@
   align-self: flex-start;
   justify-self: flex-start;
 
-  text-shadow: 4px 4px 0 var(--shadow-color);
+  text-shadow: 4px 4px 0 var(--header-shadow-color);
 }
 
 .title {
-  --text-color: var(--header-color);
-  --shadow-color: var(--accent-color);
-
-  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  color: var(--text-color);
+  color: var(--header-color);
   line-height: 82.5%;
 }
 
 .title-decor {
-  --accent-background-text-color: var(--text-color);
-
   background-color: var(--accent-color);
 
-  color: var(--accent-background-text-color);
+  color: var(--accent-text);
 }
 
 .header__description {
-  inline-size: 355px;
+  max-inline-size: 355px;
 
   align-self: center;
   justify-self: flex-end;
@@ -195,13 +184,11 @@
 }
 
 .content__heading {
-  --heading-color: var(--text-color);
-
   font-size: inherit;
-  color: var(--heading-color);
+  color: var(--content-heading-color);
 }
 
-.grid-container:has(.gallery),
+.gallery-container,
 .gallery {
   gap: var(--padding);
 }
@@ -210,13 +197,13 @@
   font-size: inherit;
 }
 
-.content__list-container .content__list-item__heading {
-  font-weight: 400;
-}
-
 .content__list-item__heading {
   margin-block-end: 10px;
   font-size: inherit;
+}
+
+.content__list-item__heading_light {
+  font-weight: 400;
 }
 
 .content__list-item__link {
@@ -259,26 +246,20 @@
 
 .footer__title {
   text-align: center;
-  text-shadow: 2px 2px 0px var(--shadow-color);
+  text-shadow: 2px 2px 0px var(--header-shadow-color);
 }
 
 @media(width >= 768px) {
-  :root {
-    --header-and-footer-margin: 60px;
-    --content-margin: 80px;
-    --padding: 20px;
-  }
-
   .title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header__title {
-    margin-inline-start: -20px;
+    margin-inline-start: calc(var(--padding) * -1);
   }
 
   .header__description {
-    inline-size: 50%;
+    max-inline-size: 50%;
   }
 
   .column {
@@ -291,7 +272,6 @@
 
   .gallery {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
   }
 
   .long-image {
@@ -304,11 +284,6 @@
 }
 
 @media(width >= 1024px) {
-  .title {
-    --text-color: #ffc2e6;
-    --shadow-color: #ff0070;
-  }
-
   .header__theme-menu {
     align-self: flex-start;
     justify-self: center;
